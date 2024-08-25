@@ -4,6 +4,6 @@ import { serveCommand } from './commands/serve';
 
 program.addCommand(serveCommand);
 
-// Done 
+// Done project
 
 program.parse(process.argv);
