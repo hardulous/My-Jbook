@@ -2,7 +2,7 @@ import path from "path";
 import { Command } from "commander";
 import { serve } from "@my-jbook/local-api";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV == "production";
 
 interface LocalApiError {
   code: string;
@@ -18,6 +18,7 @@ export const serveCommand = new Command()
     };
     try {
       const dir = path.join(process.cwd(), path.dirname(filename));
+      console.log(!isProduction)
       await serve(
         parseInt(options.port),
         path.basename(filename),
